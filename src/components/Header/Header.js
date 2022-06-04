@@ -8,6 +8,7 @@ const Wrapper = styled.header`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
