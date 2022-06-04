@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: black;
+}
+
+:root {
+  --black: #050608;
+  --gray1: #1f1f1f;
+  --gray2: #8b8c8c;
+  --white: #ffffff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--white);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
