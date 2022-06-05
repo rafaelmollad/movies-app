@@ -56,6 +56,7 @@ const SearchBar = styled.input`
   border: none;
   color: var(--gray2);
   background: inherit;
+  font-family: inherit;
 `;
 
 const StyledSearchIcon = styled(RiSearchLine)`
