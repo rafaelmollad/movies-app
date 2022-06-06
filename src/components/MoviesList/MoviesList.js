@@ -13,17 +13,6 @@ import { Navigation } from "swiper";
 
 import Movie from "../Movie/Movie";
 
-const movies = [
-  require("../../images/movie1.jpg"),
-  require("../../images/movie2.jpg"),
-  require("../../images/movie3.jpg"),
-  require("../../images/movie4.jpg"),
-  require("../../images/movie5.jpg"),
-  require("../../images/movie6.jpg"),
-  require("../../images/movie7.jpg"),
-  require("../../images/movie8.jpg"),
-];
-
 const Wrapper = styled.section``;
 
 const Category = styled.h2`
@@ -42,15 +31,17 @@ const Category = styled.h2`
   }
 `;
 
-function MoviesList(props) {
+function MoviesList({ category, movies }) {
   return (
     <Wrapper>
-      <Category>{props.category}</Category>
+      <Category>{category}</Category>
       <Swiper
         navigation={true}
         modules={[Navigation]}
         autoHeight={true}
         spaceBetween={10}
+        observer={true}
+        observeParents={true}
         slidesPerView={2}
         slidesPerGroup={1}
         breakpoints={{
@@ -69,10 +60,12 @@ function MoviesList(props) {
         loop={true}
         className="mySwiper"
       >
-        {movies.map((movie, idx) => {
+        {movies.map((movie) => {
           return (
-            <SwiperSlide key={idx}>
-              <Movie src={movie} />
+            <SwiperSlide key={movie.id}>
+              <Movie
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              />
             </SwiperSlide>
           );
         })}
